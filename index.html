@@ -9,38 +9,34 @@
   <title>Document</title>
 </head>
 <body>
-
-  <div class="main-wrapper">
-
-    <div class="container">
-      <div class="slider">
-
-        <div class="btn-arrow prev">&larr;</div>
-        <div class="btn-arrow next">&rarr;</div>
-        <div class="items-wrapper">
-          <img v-for="image in images" :src="image" alt="">
-          <!-- <img class="item" src="assets/img/01.jpg" 
-          alt="">
-          -->
-
+  <div id="app">
+    <div class="main-wrapper">
+  
+      <div class="container">
+        <div class="slider">
+  
+          <div @click="nextPrev(false)" class="btn-arrow prev">&larr;</div>
+          <div @click="nextPrev(true)" class="btn-arrow next">&rarr;</div>
+          <div class="items-wrapper">
+            <img :src="images[counter]" alt="">
+            <!-- <img class="item" src="assets/img/01.jpg" 
+            alt="">
+            -->
+  
+          </div>
+  
         </div>
-
-
-        <div class="circles">
-          <!--<div class="circle active"></div>-->
- 
+      </div>
+      <div class="container-small">
+        <div class="thumbs">
+          <img v-for="(image, index) in images" :src="image" :class="{'activeT': index === counter}">
+  
         </div>
-
       </div>
     </div>
-    <div class="container-small">
-      <div class="thumbs">
-      
 
-
-      </div>
-    </div>
   </div>
+
 
 
   <script src="assets/js/scripttt.js"></script>
